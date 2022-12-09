@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
   let result = data.employees.filter(
     (employee) => employee.id == req.params.id
-  );
+  ) || `${req.params.id} not found`;
   res.send(result);
 });
 
